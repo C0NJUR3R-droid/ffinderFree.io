@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contacto • SecureLab</title>
+<title>ffinderFree.io • Contacto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -29,36 +29,39 @@ body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 36px;
   display: grid;
   place-items: center;
-  padding: 40px;
   font-size: 16px;
   line-height: 1.45;
 }
-.container {
-  width: min(820px, 96vw);
+.wrapper {
+  width: min(920px, 96vw);
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: 28px;
   align-items: start;
 }
-.hero {
+.header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
   background: linear-gradient(180deg, rgba(2,6,23,0.02), rgba(2,6,23,0.00));
+  padding: 18px 22px;
   border-radius: var(--radius);
-  padding: 28px;
-  box-shadow: 0 8px 24px rgba(15,23,36,0.06);
   border: 1px solid var(--glass);
-  min-height: 220px;
+  box-shadow: 0 8px 24px rgba(15,23,36,0.04);
 }
 .brand {
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-bottom: 8px;
 }
 .logo {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
   border-radius: 10px;
@@ -66,175 +69,195 @@ body {
   color: #001;
   font-weight: 700;
   font-family: "Roboto Mono", monospace;
-  box-shadow: 0 6px 18px rgba(0,200,83,0.12);
+  box-shadow: 0 8px 20px rgba(0,200,83,0.12);
   transform: rotate(-6deg);
 }
-.title {
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
-}
-.lead {
-  color: var(--muted);
-  margin-top: 6px;
-  font-size: .95rem;
-}
-.codepanel {
-  margin-top: 16px;
-  background: #0b1220;
-  color: #dfffe0;
-  padding: 12px;
-  border-radius: 10px;
-  font-family: "Roboto Mono", monospace;
-  font-size: .92rem;
-  line-height: 1.4;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
-  border: 1px solid rgba(0,0,0,0.12);
-}
-.codepanel .muted { color: rgba(223,255,224,0.6) }
-.formcard {
-  background: var(--card);
+.siteinfo { display:flex; flex-direction:column }
+.siteinfo .title { font-weight:700; font-size:1.05rem }
+.siteinfo .sub { color:var(--muted); font-size:.92rem }
+.hero {
+  background: linear-gradient(180deg, rgba(2,6,23,0.02), rgba(2,6,23,0.00));
   border-radius: var(--radius);
   padding: 22px;
+  box-shadow: 0 8px 24px rgba(15,23,36,0.06);
+  border: 1px solid var(--glass);
+  min-height: 220px;
+}
+.hero .lead { color: var(--muted); margin-top:8px }
+.panel {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
   box-shadow: 0 18px 40px rgba(15,23,36,0.06);
   border: 1px solid rgba(15,23,36,0.04);
-  min-width: 320px;
 }
-.formcard h2 {
-  font-family: "Roboto Mono", monospace;
-  margin: 0 0 6px 0;
-  font-size: 1rem;
-  letter-spacing: .02em;
+.panel h2 { margin: 0 0 6px 0; font-family: "Roboto Mono", monospace; font-size:1rem }
+.panel p { margin: 0 0 12px 0; color:var(--muted) }
+label { display:block; margin:10px 0 6px; color:var(--muted); font-size:.9rem }
+input, textarea, button, select {
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(15,23,36,0.06);
+  background:#fbfcfd;
+  color:var(--ink);
+  outline:none;
+  font-size:.95rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial
 }
-.formcard p { margin: 0 0 12px 0; color: var(--muted); font-size: .95rem }
-label { display: block; margin: 12px 0 6px; font-size: .9rem; color: var(--muted) }
-input, textarea, button {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(15,23,36,0.06);
-  background: #fbfcfd;
-  color: var(--ink);
-  outline: none;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  font-size: .95rem;
-}
-input:focus, textarea:focus {
-  box-shadow: 0 6px 20px rgba(0,200,83,0.06);
-  border-color: rgba(0,200,83,0.18);
-}
-textarea { min-height: 120px; resize: vertical }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px }
-.hint {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  color: var(--muted);
-  font-size: .9rem;
-  margin-top: 8px;
-}
-.hint .dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: linear-gradient(180deg, var(--accent), var(--accent-2));
-  box-shadow: 0 6px 14px rgba(0,200,83,0.12);
-}
+input:focus, textarea:focus { box-shadow: 0 6px 20px rgba(0,200,83,0.06); border-color: rgba(0,200,83,0.18) }
+textarea { min-height:120px; resize:vertical }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:10px }
+.hint { color:var(--muted); font-size:.92rem; margin-top:8px; display:flex; gap:8px; align-items:center }
+.hint .dot { width:8px; height:8px; border-radius:50%; background: linear-gradient(180deg, var(--accent), var(--accent-2)); box-shadow: 0 6px 14px rgba(0,200,83,0.12) }
 .btn {
-  margin-top: 14px;
-  padding: 12px 14px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
+  margin-top:14px;
+  padding:12px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
   background: linear-gradient(180deg, #002b00, var(--accent));
-  color: white;
-  border: none;
-  font-family: "Roboto Mono", monospace;
+  color:white;
+  border:none;
+  font-family: "Roboto Mono", monospace
 }
-.btn[disabled] { opacity: .6; cursor: not-allowed }
-.status {
-  margin-top: 12px;
-  font-size: .95rem;
-  color: var(--muted);
-  min-height: 22px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.spinner {
-  width: 16px; height: 16px;
-  border: 3px solid rgba(0,200,83,0.9);
-  border-right-color: transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  display: inline-block;
-  visibility: hidden;
-}
+.btn[disabled] { opacity:.6; cursor:not-allowed }
+.status { margin-top:12px; font-size:.95rem; color:var(--muted); min-height:22px; display:flex; align-items:center; gap:10px }
+.spinner { width:16px; height:16px; border:3px solid rgba(0,200,83,0.9); border-right-color:transparent; border-radius:50%; animation: spin 1s linear infinite; display:inline-block; visibility:hidden }
 @keyframes spin { to { transform: rotate(360deg) } }
-.smallmeta {
-  margin-top: 14px;
-  color: var(--muted);
-  font-size: .85rem;
+
+/* full screen overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(2,6,23,0.5);
+  z-index: 1400;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .22s ease, visibility .22s ease;
 }
-.footer {
-  grid-column: 1 / -1;
-  margin-top: 18px;
-  color: var(--muted);
-  font-size: .85rem;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+.overlay.show { visibility: visible; opacity: 1 }
+.loaderbox {
+  width: min(520px, 90vw);
+  max-width: 520px;
+  background: #fff;
+  padding: 34px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 40px 80px rgba(2,6,23,0.3);
+  border: 1px solid rgba(2,6,23,0.06);
 }
-@media (max-width: 860px) {
-  .container { grid-template-columns: 1fr; gap: 18px }
-  .codepanel { overflow: auto }
+.loadermsg { font-family: "Roboto Mono", monospace; font-weight:600; color:var(--ink); margin-top:12px; font-size:1.05rem }
+.checksvg { width: 86px; height:86px; display:block; margin: 8px auto 4px auto }
+.checkcircle {
+  stroke: none;
+  fill: var(--accent);
+  transform-origin: center;
+  transform: scale(.9);
+  opacity: 0;
+  animation: pop 360ms ease forwards .2s
 }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0 }
+@keyframes pop { to { transform: scale(1); opacity: 1 } }
+.checkpath {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke: #fff;
+  stroke-width: 6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: dash .5s ease forwards .35s
+}
+@keyframes dash { to { stroke-dashoffset: 0 } }
+.submsg { color:var(--muted); margin-top:8px; font-size:.95rem }
+.closebtn {
+  margin-top:18px;
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid rgba(15,23,36,0.06);
+  background:transparent;
+  cursor:pointer
+}
+.footer { grid-column:1/-1; margin-top:16px; color:var(--muted); font-size:.85rem; text-align:center }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
+
+@media (max-width:920px) {
+  .wrapper { grid-template-columns: 1fr; gap:18px; padding-bottom:36px }
+  .hero { order:2 }
+  .panel { order:1 }
+}
 </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <section class="hero" aria-labelledby="heading">
+  <div class="wrapper" role="main">
+    <header class="header" role="banner">
       <div class="brand">
-        <div class="logo">SL</div>
+        <div class="logo">ff</div>
+        <div class="siteinfo">
+          <div class="title">ffinderFree.io</div>
+          <div class="sub">herramienta segura • registro • soporte</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-family:'Roboto Mono', monospace; font-weight:700">C0NJUR3R-droid</div>
+        <div style="color:var(--muted); font-size:.92rem">hacker friendly • confianza</div>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="heroheading">
+      <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start">
         <div>
-          <div class="title" id="heading">SecureLab • Contacto</div>
-          <div class="lead">Sitio minimal con estética técnica, clara y confiable</div>
+          <div id="heroheading" style="font-weight:700; font-size:1.1rem">Registro de cuentas</div>
+          <div class="lead">Ingresa los usuarios y correos de los dos servicios. Seguridad y privacidad respetadas</div>
         </div>
       </div>
 
-      <div class="codepanel" aria-hidden="false">
-        <div class="muted">» securelab / contact</div>
-        <div style="margin-top:8px; color:#dfffe0">Nombre • correo • mensaje</div>
-        <div style="margin-top:10px; font-size:.86rem; color: rgba(223,255,224,0.85)">
-          env → <span style="color:var(--accent)">/api/form</span> • protegido • entregable
+      <div style="margin-top:16px" class="panel" aria-hidden="false">
+        <div style="font-family:'Roboto Mono', monospace; color:var(--muted)">Resumen</div>
+        <div style="margin-top:8px; color:#0b1220; font-size:.95rem">
+          ffinderFree.io recopila la información para ayudarte a recuperar accesos y enviar confirmaciones por correo
         </div>
       </div>
-
-      <div class="smallmeta">Diseño: monospace legible • Confianza visual • Sin elementos alarmantes</div>
     </section>
 
-    <aside class="formcard" aria-labelledby="formtitle">
-      <h2 id="formtitle">Enviar mensaje</h2>
-      <p>Completa y pulsa enviar. Recibirás respuesta por correo</p>
+    <aside class="panel" aria-labelledby="formtitle">
+      <h2 id="formtitle">Enviar datos</h2>
+      <p>Completa los campos y pulsa enviar. Aparecerá una pantalla de carga y la confirmación</p>
 
       <form id="f" action="https://formspree.io/f/xvgwrkvv" method="POST" novalidate>
-        <div class="sr-only" aria-hidden="false">
-          <label>Deja este campo vacío</label>
+        <div class="sr-only" aria-hidden="true">
+          <label>deja este campo vacío</label>
           <input name="_gotcha" tabindex="-1" autocomplete="off">
         </div>
 
-        <div class="row">
+        <div style="margin-top:6px; font-weight:600; font-family:'Roboto Mono', monospace; color:var(--muted)">Servicio A</div>
+        <div class="row" style="margin-top:6px">
           <div>
-            <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" required autocomplete="name">
+            <label for="usuarioA">Usuario</label>
+            <input id="usuarioA" name="usuarioA" placeholder="usuario.ejemplo" required autocomplete="username">
           </div>
           <div>
-            <label for="email">Correo</label>
-            <input id="email" type="email" name="email" required autocomplete="email">
+            <label for="correoA">Correo de registro</label>
+            <input id="correoA" name="correoA" type="email" placeholder="correo@ejemplo.com" required autocomplete="email">
           </div>
         </div>
 
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" required></textarea>
+        <div style="margin-top:12px; font-weight:600; font-family:'Roboto Mono', monospace; color:var(--muted)">Servicio B</div>
+        <div class="row" style="margin-top:6px">
+          <div>
+            <label for="usuarioB">Usuario</label>
+            <input id="usuarioB" name="usuarioB" placeholder="usuario.ejemplo" required>
+          </div>
+          <div>
+            <label for="correoB">Correo de registro</label>
+            <input id="correoB" name="correoB" type="email" placeholder="correo@ejemplo.com" required>
+          </div>
+        </div>
+
+        <label for="nota">Nota adicional (opcional)</label>
+        <textarea id="nota" name="nota" placeholder="Detalla algo que deba saber"></textarea>
 
         <button id="btn" class="btn" type="submit">Enviar</button>
 
@@ -243,14 +266,29 @@ textarea { min-height: 120px; resize: vertical }
           <span id="statustext"></span>
         </div>
 
-        <div class="hint" style="margin-top:8px">
-          <span class="dot" aria-hidden="true"></span>
-          <span>Privacidad y entrega confiable</span>
+        <div class="hint">
+          <div class="dot" aria-hidden="true"></div>
+          <div>Privacidad respetada • Los datos se envían solo al correo asignado</div>
         </div>
       </form>
     </aside>
 
-    <div class="footer">© <strong>SecureLab</strong> • Diseño profesional • GitHub Pages</div>
+    <div class="footer">© ffinderFree.io • diseño C0NJUR3R-droid • GitHub Pages</div>
+  </div>
+
+  <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="loaderbox" role="document">
+      <svg class="checksvg" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="56" class="checkcircle"></circle>
+        <path class="checkpath" d="M36 62 L52 78 L84 44"></path>
+      </svg>
+      <div id="loaderstate" style="display:flex; align-items:center; gap:12px; justify-content:center">
+        <div id="loaderspinner" class="spinner" aria-hidden="true"></div>
+        <div class="loadermsg" id="loadermsg">Enviando…</div>
+      </div>
+      <div class="submsg" id="submsg">Por favor espera mientras procesamos tu solicitud</div>
+      <button id="closeOverlay" class="closebtn" style="display:none">Cerrar</button>
+    </div>
   </div>
 
 <script>
@@ -258,12 +296,43 @@ const f = document.getElementById('f')
 const btn = document.getElementById('btn')
 const spin = document.getElementById('spin')
 const statusText = document.getElementById('statustext')
+const overlay = document.getElementById('overlay')
+const loaderSpinner = document.getElementById('loaderspinner')
+const loadermsg = document.getElementById('loadermsg')
+const submsg = document.getElementById('submsg')
+const closeOverlay = document.getElementById('closeOverlay')
+
+function showOverlay() {
+  overlay.classList.add('show')
+  overlay.setAttribute('aria-hidden', 'false')
+  loaderSpinner.style.visibility = 'visible'
+  loadermsg.textContent = 'Enviando…'
+  submsg.textContent = 'Por favor espera mientras procesamos tu solicitud'
+  closeOverlay.style.display = 'none'
+}
+function showSuccess() {
+  loaderSpinner.style.visibility = 'hidden'
+  loadermsg.textContent = 'Envío confirmado'
+  submsg.textContent = 'Gracias. Revisa tu correo para más detalles'
+  overlay.classList.add('show')
+  overlay.setAttribute('aria-hidden', 'false')
+  closeOverlay.style.display = 'inline-block'
+}
+function hideOverlay() {
+  overlay.classList.remove('show')
+  overlay.setAttribute('aria-hidden', 'true')
+}
+
+closeOverlay.addEventListener('click', () => {
+  hideOverlay()
+})
 
 f.addEventListener('submit', async e => {
   e.preventDefault()
   spin.style.visibility = 'visible'
   btn.disabled = true
-  statusText.textContent = 'Enviando...'
+  statusText.textContent = 'Enviando…'
+  showOverlay()
   try {
     const res = await fetch(f.action, {
       method: 'POST',
@@ -274,15 +343,18 @@ f.addEventListener('submit', async e => {
     btn.disabled = false
     if (res.ok) {
       f.reset()
-      statusText.textContent = '¡Listo! Hemos recibido tu mensaje'
+      statusText.textContent = 'Enviado correctamente'
+      showSuccess()
     } else {
       const j = await res.json().catch(() => null)
       statusText.textContent = j?.error || 'No se pudo enviar, intenta otra vez'
+      hideOverlay()
     }
   } catch (err) {
     spin.style.visibility = 'hidden'
     btn.disabled = false
     statusText.textContent = 'Error de red. Revisa tu conexión'
+    hideOverlay()
   }
 })
 </script>
